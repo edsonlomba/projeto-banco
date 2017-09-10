@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Pagina Principal</title>
+    </head>
+    <body>
+        <h1>Exemplo de uso de FrontController</h1>
+
+        <a href="FrontController?control=Lista">Lista</a>
+        
+        <h1>Bucar conta</h1>
+        <form method="post" action="FrontController?control=Busca">
+            <p>Número: <input type="text" name="numero" /></p>
+            <p><input type="submit" value="Buscar"/></p>
+        </form>
+        
+        <h1>Inserir conta</h1>
+        <form method="post" action="FrontController?control=Insere">
+            <p>Número: <input type="text" name="numero" /></p>
+            <p>Saldo: <input type="text" name="saldo" /></p>
+            <p><input type="submit" value="Inserir"/></p>
+        </form>
+        
+        <h1>Remover conta</h1>
+        <form method="post" action="FrontController?control=Remove">
+            <p>Número: <input type="text" name="numero" /></p>
+            <p><input type="submit" value="Remover"/></p>
+        </form>
+        
+        <h1>Atualizar conta</h1>
+        <form method="post" action="FrontController?control=Atualiza">
+            <p>Número: <input type="text" name="numero" /></p>
+            <p>Saldo: <input type="text" name="saldo" /></p>
+            <p><input type="submit" value="Atualizar"/></p>
+        </form>
+    </body>
+</html>

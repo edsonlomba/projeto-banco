@@ -1,0 +1,10 @@
+CREATE TABLE contas (
+    nro_conta BIGINT NOT NULL,
+    saldo DECIMAL(8,2),
+    PRIMARY KEY (nro_conta)
+);
+
+INSERT INTO contas VALUES (123, 500.00);
+INSERT INTO contas VALUES (124, 1000.00);
+INSERT INTO contas VALUES (125, 2500.00);
+INSERT INTO contas VALUES (126, 55500.00);
