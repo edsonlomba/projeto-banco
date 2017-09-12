@@ -25,6 +25,8 @@ public class InsereController extends AbstractController{
             ConexaoInterface conexao = new ConexaoJavaDb("localhost", 1527, "app", "app", "sistema_bancario");
             boolean conexaoEstabelecida = false;
             ContaDaoInterface dao = null;
+            String sNome = this.getRequest().getParameter("numero");
+            String sSaldo = this.getRequest().getParameter("saldo");
             try {
                 dao = new ContaDaoRelacional(conexao);
                 conexaoEstabelecida = true;
