@@ -25,6 +25,7 @@ public class RemoveController extends AbstractController{
             ConexaoInterface conexao = new ConexaoJavaDb("localhost", 1527, "app", "app", "sistema_bancario");
             boolean conexaoEstabelecida = false;
             ContaDaoInterface dao = null;
+            String sNumero = this.getRequest().getParameter("numero");
             try {
                 dao = new ContaDaoRelacional(conexao);
                 conexaoEstabelecida = true;
@@ -34,11 +35,11 @@ public class RemoveController extends AbstractController{
                 conexaoEstabelecida = false;
             }
             if (conexaoEstabelecida) {
-                List<Conta> contas;
+                long numero = Long.parseLong(sNumero);
                 try {
-                    contas = dao.obterTodos();
+                    dao.apagar(numero);
                     this.setReturnPage("/conta.jsp");
-                    this.getRequest().setAttribute("lista_contas", contas);
+                    //this.getRequest().setAttribute("lista_contas", contas);
                 } catch (BancoDaoException ex) {
                     System.out.println("Erro na operação!");
                 }

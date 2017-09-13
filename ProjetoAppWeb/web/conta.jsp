@@ -4,6 +4,11 @@
     Author     : edson
 --%>
 
+<%@page import="bancodao.ContaDaoRelacional"%>
+<%@page import="bancodao.ContaDaoInterface"%>
+<%@page import="bancodao.ConexaoJavaDb"%>
+<%@page import="bancodao.ConexaoInterface"%>
+<%@page import="bancodao.Conta"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,7 +18,6 @@
     </head>
     <body>
         <h1>Conta!</h1>
-        
         <a href="index.html">Voltar</a>
     </body>
 </html>
