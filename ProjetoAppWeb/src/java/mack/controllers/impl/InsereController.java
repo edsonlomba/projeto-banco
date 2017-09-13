@@ -7,6 +7,7 @@ import bancodao.ConexaoJavaDb;
 import bancodao.Conta;
 import bancodao.ContaDaoInterface;
 import bancodao.ContaDaoRelacional;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,7 +26,7 @@ public class InsereController extends AbstractController{
             ConexaoInterface conexao = new ConexaoJavaDb("localhost", 1527, "app", "app", "sistema_bancario");
             boolean conexaoEstabelecida = false;
             ContaDaoInterface dao = null;
-            String sNome = this.getRequest().getParameter("numero");
+            String sNumero = this.getRequest().getParameter("numero");
             String sSaldo = this.getRequest().getParameter("saldo");
             try {
                 dao = new ContaDaoRelacional(conexao);
@@ -36,11 +37,13 @@ public class InsereController extends AbstractController{
                 conexaoEstabelecida = false;
             }
             if (conexaoEstabelecida) {
-                List<Conta> contas;
+                long numero = Long.parseLong(sNumero);
+                BigDecimal saldo = new BigDecimal(sSaldo);
+                Conta contas = new Conta(numero,saldo);
                 try {
-                    contas = dao.obterTodos();
+                    dao.inserir(contas);
                     this.setReturnPage("/conta.jsp");
-                    this.getRequest().setAttribute("lista_contas", contas);
+                    //this.getRequest().setAttribute("lista_contas", contas);
                 } catch (BancoDaoException ex) {
                     System.out.println("Erro na operação!");
                 }
