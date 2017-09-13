@@ -19,7 +19,7 @@ public class ContaDaoRelacional implements ContaDaoInterface {
         Connection connection = conexao.getConnection();
         String sql = "";
         try {
-            sql = "SELECT nro_conta, saldo FROM contas";
+            sql = "SELECT nro_conta, saldo FROM contas ORDER BY 1";
             stmObterTodos = connection.prepareStatement(sql);
             sql = "SELECT nro_conta, saldo FROM contas WHERE nro_conta = ?";
             stmBuscar = conexao.getConnection().prepareStatement(sql);
