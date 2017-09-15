@@ -14,7 +14,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Atualiza Conta</title>
     </head>
     <body>
         <h1>Conta atualizada com sucesso!</h1>
