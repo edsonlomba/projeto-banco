@@ -39,11 +39,13 @@ public class AtualizaController extends AbstractController{
             if (conexaoEstabelecida) {
                 long numero = Long.parseLong(sNumero);
                 BigDecimal saldo = new BigDecimal(sSaldo);
-                Conta contas = new Conta(numero,saldo);
+                Conta conta = new Conta(numero,saldo);
+                List<Conta> contas;
                 try {
-                     dao.atualizar(contas);
-                    this.setReturnPage("/conta.jsp");
-                    //this.getRequest().setAttribute("lista_contas", contas);
+                    dao.atualizar(conta);
+                    contas = dao.obterTodos();
+                    this.setReturnPage("/atualiza_conta.jsp");
+                    this.getRequest().setAttribute("lista_contas", contas);
                 } catch (BancoDaoException ex) {
                     System.out.println("Erro na operação!");
                 }
