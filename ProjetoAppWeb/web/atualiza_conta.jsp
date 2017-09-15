@@ -1,7 +1,7 @@
 <%-- 
     Document   : atualiza_conta
     Created on : 15/09/2017, 20:40:01
-    Author     : 41525388
+    Author     : Edson Lomba - 41525388
 --%>
 <%@page import="bancodao.ContaDaoRelacional"%>
 <%@page import="bancodao.ContaDaoInterface"%>

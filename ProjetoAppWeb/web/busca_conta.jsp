@@ -1,7 +1,7 @@
 <%-- 
     Document   : adiciona_conta
     Created on : 08/09/2017, 23:44:02
-    Author     : edson
+    Author     : Edson Lomba - 41525388
 --%>
 
 <%@page import="bancodao.ContaDaoRelacional"%>

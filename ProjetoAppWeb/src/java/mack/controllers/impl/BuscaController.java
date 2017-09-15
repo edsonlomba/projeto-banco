@@ -41,7 +41,7 @@ public class BuscaController extends AbstractController{
                     this.setReturnPage("/busca_conta.jsp");
                     this.getRequest().setAttribute("retorno", c);
                 } catch (BancoDaoException ex) {
-                    System.out.println("Erro na operação!");
+                    this.setReturnPage("/erro.jsp");
                 }
             }
         } catch (Exception ex) {

@@ -47,7 +47,7 @@ public class AtualizaController extends AbstractController{
                     this.setReturnPage("/atualiza_conta.jsp");
                     this.getRequest().setAttribute("lista_contas", contas);
                 } catch (BancoDaoException ex) {
-                    System.out.println("Erro na operação!");
+                    this.setReturnPage("/erro.jsp");
                 }
             }
         } catch (Exception ex) {

@@ -43,7 +43,7 @@ public class ListaController extends AbstractController{
                     this.setReturnPage("/lista_contas.jsp");
                     this.getRequest().setAttribute("lista_contas", contas);
                 } catch (BancoDaoException ex) {
-                    System.out.println("Erro na operação!");
+                    this.setReturnPage("/erro.jsp");
                 }
             }
         } catch (Exception ex) {
