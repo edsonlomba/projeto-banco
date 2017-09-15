@@ -36,10 +36,12 @@ public class RemoveController extends AbstractController{
             }
             if (conexaoEstabelecida) {
                 long numero = Long.parseLong(sNumero);
+                List<Conta> contas;
                 try {
                     dao.apagar(numero);
-                    this.setReturnPage("/conta.jsp");
-                    //this.getRequest().setAttribute("lista_contas", contas);
+                    contas = dao.obterTodos();
+                    this.setReturnPage("/remove_conta.jsp");
+                    this.getRequest().setAttribute("lista_contas", contas);
                 } catch (BancoDaoException ex) {
                     System.out.println("Erro na operação!");
                 }

@@ -39,11 +39,13 @@ public class InsereController extends AbstractController{
             if (conexaoEstabelecida) {
                 long numero = Long.parseLong(sNumero);
                 BigDecimal saldo = new BigDecimal(sSaldo);
-                Conta contas = new Conta(numero,saldo);
+                Conta conta = new Conta(numero,saldo);
+                List<Conta> contas;
                 try {
-                    dao.inserir(contas);
-                    this.setReturnPage("/conta.jsp");
-                    //this.getRequest().setAttribute("lista_contas", contas);
+                    dao.inserir(conta);
+                    contas = dao.obterTodos();
+                    this.setReturnPage("/insere_conta.jsp");
+                    this.getRequest().setAttribute("lista_contas", contas);
                 } catch (BancoDaoException ex) {
                     System.out.println("Erro na operação!");
                 }

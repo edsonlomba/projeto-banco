@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Index
-    Created on : 01/09/2017, 20:36:34
-    Author     : Edson Lomba - 41525388
+    Document   : remove_conta
+    Created on : 15/09/2017, 20:29:52
+    Author     : 41525388
 --%>
 <%@page import="bancodao.ContaDaoRelacional"%>
 <%@page import="bancodao.ContaDaoInterface"%>
@@ -13,12 +13,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type"
-              content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Remove Conta</title>
     </head>
     <body>
-        <h1>Lista de Contas</h1>
+        <h1>Conta removida com sucesso!</h1>
         <%
             List<Conta> contas = (List<Conta>) request.getAttribute("lista_contas");
         %>
@@ -26,8 +25,8 @@
         <table>
             <% for (Conta c : contas) {%>
             <tr>
-                <td><%=c.getNumero()%></td>
-                <td><%=c.getSaldo()%></td>
+                <td>Nímero: <%=c.getNumero()%></td>
+                <td>Saldo: <%=c.getSaldo()%></td>
             </tr>
             <%}%>
         </table>
