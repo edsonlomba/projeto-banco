@@ -37,9 +37,9 @@ public class BuscaController extends AbstractController{
             if (conexaoEstabelecida) {
                 long numero = Long.parseLong(sNumero);
                 try {
-                    dao.buscar(numero);
-                    this.setReturnPage("/conta.jsp");
-                    this.getRequest().setAttribute("retorno", dao);
+                    Conta c = dao.buscar(numero);
+                    this.setReturnPage("/busca_conta.jsp");
+                    this.getRequest().setAttribute("retorno", c);
                 } catch (BancoDaoException ex) {
                     System.out.println("Erro na operação!");
                 }

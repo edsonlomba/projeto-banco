@@ -18,7 +18,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Contas</h1>
+        <h1>Lista de Contas</h1>
         <%
             List<Conta> contas = (List<Conta>) request.getAttribute("lista_contas");
         %>

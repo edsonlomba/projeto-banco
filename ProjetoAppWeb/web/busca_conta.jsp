@@ -18,6 +18,16 @@
     </head>
     <body>
         <h1>Conta!</h1>
+        <%
+            Conta conta = (Conta) request.getAttribute("retorno");
+        %>
+        <table>
+            <tr>
+                <td>Número: <%=conta.getNumero()%></td>
+                <td>Saldo: <%=conta.getSaldo()%></td>
+            </tr>
+        </table>
+        <br>
         <a href="index.html">Voltar</a>
     </body>
 </html>
