@@ -89,16 +89,17 @@ public class ContaDaoRelacional implements ContaDaoInterface {
     }
 
     @Override
-    public int buscar(long numero) throws BancoDaoException {
-        int ret = -1;
+    public Conta buscar(long numero) throws BancoDaoException {
+        Conta ret = null;
         try {
             stmBuscar.setLong(1, numero);
             ResultSet resultados = stmBuscar.executeQuery();
             
             System.out.println("\nDados da conta:");
             while (resultados.next()) {
-                System.out.print("Número: " + resultados.getLong("nro_conta") + " - ");
-                System.out.println(" Saldo: " + resultados.getBigDecimal("saldo"));
+                //System.out.print("Número: " + resultados.getLong("nro_conta") + " - ");
+                //System.out.println(" Saldo: " + resultados.getBigDecimal("saldo"));
+                ret = new Conta(resultados.getLong("nro_conta"),resultados.getBigDecimal("saldo"));
             }
         } catch (SQLException ex) {
             throw new BancoDaoException("Erro ao encontrar registro!");

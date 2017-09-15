@@ -9,5 +9,5 @@ public interface ContaDaoInterface {
     int inserir(Conta conta) throws BancoDaoException;
     int atualizar(Conta conta) throws BancoDaoException;
     int apagar(long numero) throws BancoDaoException;
-    int buscar(long numero) throws BancoDaoException;
+    Conta buscar(long numero) throws BancoDaoException;
 }
