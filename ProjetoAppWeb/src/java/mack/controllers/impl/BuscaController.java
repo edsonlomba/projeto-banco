@@ -7,7 +7,6 @@ import bancodao.ConexaoJavaDb;
 import bancodao.Conta;
 import bancodao.ContaDaoInterface;
 import bancodao.ContaDaoRelacional;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import mack.controllers.AbstractController;
