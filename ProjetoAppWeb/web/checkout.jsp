@@ -26,8 +26,7 @@
                 }
             }
         %>
-        <h3>Hi <%=userName%>, do the checkout.</h3>
-        <br>
+        <p style="font-family:verdana;font-weight:bold;font-size:16px">lá <%=userName%>, clique no botão abaixo para efetur logout.</p>
         <form action="LogoutServlet" method="post">
             <input type="submit" value="Logout" >
         </form>

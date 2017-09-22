@@ -31,17 +31,11 @@
                 }
             }
         %>
-        <h3>Hi <%=userName%>, Login successful. Your Session ID=<%=sessionID%></h3>
+        <p style="font-family:verdana;font-weight:bold;font-size:16px">Olá <%=userName%>, login efetuado com sucesso. Esse é seu Session ID = <%=sessionID%></p>
         <br>
-        User=<%=user%>
+        <p style="font-family:verdana;font-size:12px">Usuário = <%=user%></p>
+        <a href="index.html"><p style="font-family:verdana;font-size:12px">Gerenciar Contas</p></a>
         <br>
-        <br>
-        <a href="index.html">Gerenciar Contas</a>
-        <br>
-        <br>
-        <a href="checkout.jsp">Checkout Page</a>
-        <form action="LogoutServlet" method="post">
-            <input type="submit" value="Logout" >
-        </form>
+        <a href="checkout.jsp"><p style="font-family:verdana;font-size:12px">Efetuar Logoff</p></a>
     </body>
 </html>

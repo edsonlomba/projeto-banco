@@ -18,20 +18,27 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Lista de Contas</h1>
+        <a href="checkout.jsp"><p style="font-family:verdana;font-size:12px">Efetuar Logoff</p></a>
+        
+        <p style="font-family:verdana;font-weight:bold;font-size:16px">Lista de Contas</p>
         <%
             List<Conta> contas = (List<Conta>) request.getAttribute("lista_contas");
         %>
         <%if (contas.size() > 0) { %>
-        <table>
+        <table style="font-family:verdana;font-size:12px">
+            <tr>
+                <td width="100pixels">Número</td>
+                <td width="100pixels">Saldo da conta</td>
+            </tr>
             <% for (Conta c : contas) {%>
             <tr>
                 <td><%=c.getNumero()%></td>
-                <td><%=c.getSaldo()%></td>
+                <td>R$ <%=c.getSaldo()%></td>
             </tr>
             <%}%>
         </table>
         <%}%>
-        <br><a href="index.html">Voltar</a>
+        <br>
+        <a href="index.html" style="font-family:verdana;font-size:12px">Voltar</a>
     </body>
 </html>
